@@ -3,7 +3,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-[![Build Status](https://travis-ci.org/lukebrewerton/vuln_frontend.svg?branch=master)](https://travis-ci.org/lukebrewerton/vuln_backend)
+[![Build Status](https://travis-ci.org/lukebrewerton/vuln_frontend.svg?branch=master)](https://travis-ci.org/lukebrewerton/vuln_frontend)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
 
 A frontend written in Python that connects to the [backend](https://github.com/lukebrewerton/vuln_backend) to pull in all security vulnerabilities that apply to your setup.
