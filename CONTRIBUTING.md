@@ -15,8 +15,8 @@ Please proceed with a Pull Request only after you're assigned. It'd be sad if yo
 1. Install with
 
     ```sh
-    git clone git@github.com:lukebrewerton/vuln_backend.git
-    cd vuln_backend
+    git clone git@github.com:lukebrewerton/vuln_frontend.git
+    cd vuln_frontend
     pip install -r requirements.txt
     ```
 
@@ -26,9 +26,9 @@ Please proceed with a Pull Request only after you're assigned. It'd be sad if yo
     - fixing bugs
     - add tests
 
-3. (Optional) To test whether `vuln_backend` scripts is working properly, do 
+3. (Optional) To test whether `vuln_frontend` scripts is working properly, do 
     ```sh
-    python vuln_backend.py
+    python vuln_frontend.py
     ```
 
 4. (Required for script file changes) These are the specifications for the script files (/vuln_backend/) -
