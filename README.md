@@ -19,7 +19,6 @@ This is the frontend responsible for the following:-
 
 - [Usage](#usage)
 - [Installation](#installation)
-- [Recommended configurations](#recommended-configurations)
 - [Updating](#updating)
 - [Uninstallation](#uninstallation)
 - [Contributing](#contributing)
