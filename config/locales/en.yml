@@ -16,18 +16,14 @@
 #
 # This would use the information in config/locales/es.yml.
 #
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  navigation:
+    main_title: AdminLTE Template
+    root: Home
+    admin: Admin
+  home:
+    title: AdminLTE Rails Template.
+    subtitle: This is just a simple Rails template application of an admin panel with the <a href="https://almsaeedstudio.com/">AdminLTE</a> theme integrated to use as a starting point for your application

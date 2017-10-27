@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
-  resources :users
-  get 'welcome/index'
-  resources :vulnerabilities
-  root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Back admin routes start
+  namespace :admin do
+    resources :users
+
+    # Admin root
+    root to: 'application#index'
+  end
+  # Back admin routes end
+
+  # Front routes start
+  devise_for :users, only: [:session, :registration], path: 'session',
+             path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+
+  # Application root
+  root to: 'application#home'
+  # Front routes end
 end
