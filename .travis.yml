@@ -8,7 +8,6 @@ before_install:
   - sudo apt-get install libcurl4-openssl-dev
 
 before_script:
-  - ./set_token.sh
   - bundle exec rake db:drop || true
   - bundle exec rake db:create db:migrate
   - bundle exec rake db:seed
