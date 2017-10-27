@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 ruby '2.4.2'
 
 # General list of gems
-gem 'rails', '5.0.2'
+gem 'rails', '5.1.4'
+gem 'rake', '12.2.1'
 gem 'mysql2'
 gem 'puma'
 gem 'sass-rails'
@@ -65,7 +66,7 @@ end
 
 # Both Test and Development env gems
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop'
