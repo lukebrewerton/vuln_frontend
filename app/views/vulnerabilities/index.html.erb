@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @vulnerabilities.size == 0 %>
+      <tr>
+        <td colspan="6">No Vulnerabilities found.</td>
+      </tr>
+    <% else %>
+      <% @vulnerabilities.each do |vulnerability| %>
+        <tr>
+          <td><%= vulnerability.id %></td>
+          <td><%= vulnerability.description %></td>
+          <td><%= vulnerability.type %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

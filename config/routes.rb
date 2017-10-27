@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   # Front routes start
   devise_for :users, only: [:session, :registration], path: 'session',
              path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  authenticate :user do
+    resources :vulnerabilities, only: [:index, :show]
+  end
+
 
   # Application root
   root to: 'application#home'
