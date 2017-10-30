@@ -25,5 +25,10 @@ en:
     root: Home
     admin: Admin
   home:
+<<<<<<< HEAD
     title: Hyve Vulnerability Check Tool
     subtitle: This tool is to check current vulnerabilities on the platform.
+=======
+    title: Vulnerability Check Tool.
+    subtitle: This tool is to check the vulnerabilities relevant to your environment.
+>>>>>>> f226221de77928b2790256b925853bb05ba3d696
