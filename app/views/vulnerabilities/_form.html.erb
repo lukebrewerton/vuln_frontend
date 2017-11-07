@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id, id: :vulnerability_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :vulnerability_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :vulnerability_type %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

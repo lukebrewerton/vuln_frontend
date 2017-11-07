@@ -21,9 +21,9 @@
 
 en:
   navigation:
-    main_title: AdminLTE Template
+    main_title: Vulnerability Checker
     root: Home
     admin: Admin
   home:
-    title: AdminLTE Rails Template.
-    subtitle: This is just a simple Rails template application of an admin panel with the <a href="https://almsaeedstudio.com/">AdminLTE</a> theme integrated to use as a starting point for your application
+    title: Vulnerability Checker
+    subtitle: This tool is to check the latest vulnerabilities relevant to your platform.

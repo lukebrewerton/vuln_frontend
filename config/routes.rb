@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bulletins
+  resources :vulnerabilities
   # Back admin routes start
   namespace :admin do
     resources :users
