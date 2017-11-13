@@ -1,23 +1,27 @@
 class Admin::ActiveVulnerabilitiesController < ApplicationController
   layout :layout_by_resource
+  respond_to :json, :html
+  before_action :set_activevulnerability, only: [:show, :edit, :update, :destroy]
+
   def index
     @activevulnerabilities = ActiveVulnerability.all
   end
 
   def edit
-    @activevulnerabilities = ActiveVulnerability.find(params[:id])
+    @url = admin_active_vulnerabilities_path(@activevulnerabilities)
   end
 
   def update
-    attributes = av_params.clone
-    if @activevulnerabilities.update(av_params)
+    @back_url = session[:my_previous_url]
+    if @activevulnerabilities.update(activevulnerability_params)
       flash[:notice] = t('admin.active_vuln.update.success')
-      respond_with :edit, :admin, @activevulnerability
+      respond_with :edit, :admin, @activevulnerabilities
     else
-      flash[:warning] = @activevulnerabilities.errors.full_messages.uniq.join(', ')
-      respond_with :edit, :admin, :activevulnerability
-    end
+      flash[:warning] = @user.errors.full_messages.uniq.join(', ')
+      respond_with :edit, :admin, :active_vulnerability
+      end
   end
+
 
   private def layout_by_resource
     if devise_controller?
@@ -26,8 +30,10 @@ class Admin::ActiveVulnerabilitiesController < ApplicationController
       'admin/layouts/admin'
     end
   end
-
-  private def av_params
-    params.require(:activevulnerability).permit(:displayname, :vulncount, :active)
+  private def set_activevulnerability
+    @activevulnerabilities = ActiveVulnerability.find(params[:id])
+  end
+  private def activevulnerability_params
+    params.require(:active_vulnerability).permit(:displayname, :vulncount, :active)
   end
 end
