@@ -1,0 +1,15 @@
+<div class="form-group">
+  <%= f.label :displayname %>
+  <%= f.email_field :displayname, class: "form-control", :readonly => true %>
+</div>
+
+<div class="form-group">
+  <%= f.label :vulncount %>
+  <%= f.email_field :vulncount, class: "form-control", :readonly => true %>
+</div>
+
+<div class="form-group">
+  <%= f.label :active %>
+  <%= f.check_box :active%>
+  <span class="help-block"><i>* Check this box to have the vulnerabilities processed.</i></span>
+</div>
