@@ -1,74 +1,64 @@
 class VulnerabilitiesController < ApplicationController
+  before_action :set_vulnerabilities
   before_action :set_vulnerability, only: [:show, :edit, :update, :destroy]
 
-  # GET /vulnerabilities
-  # GET /vulnerabilities.json
+  # GET admins/1/vulnerabilities
   def index
-    @vulnerabilities = Vulnerability.all
+    @vulnerabilities = @admin.vulnerabilities
   end
 
-  # GET /vulnerabilities/1
-  # GET /vulnerabilities/1.json
+  # GET admins/1/vulnerabilities/1
   def show
   end
 
-  # GET /vulnerabilities/new
+  # GET admins/1/vulnerabilities/new
   def new
-    @vulnerability = Vulnerability.new
+    @vulnerability = @admin.vulnerabilities.build
   end
 
-  # GET /vulnerabilities/1/edit
+  # GET admins/1/vulnerabilities/1/edit
   def edit
   end
 
-  # POST /vulnerabilities
-  # POST /vulnerabilities.json
+  # POST admins/1/vulnerabilities
   def create
-    @vulnerability = Vulnerability.new(vulnerability_params)
+    @vulnerability = @admin.vulnerabilities.build(vulnerability_params)
 
-    respond_to do |format|
-      if @vulnerability.save
-        format.html { redirect_to @vulnerability, notice: 'Vulnerability was successfully created.' }
-        format.json { render :show, status: :created, location: @vulnerability }
-      else
-        format.html { render :new }
-        format.json { render json: @vulnerability.errors, status: :unprocessable_entity }
-      end
+    if @vulnerability.save
+      redirect_to([@vulnerability.admin, @vulnerability], notice: 'Vulnerability was successfully created.')
+    else
+      render action: 'new'
     end
   end
 
-  # PATCH/PUT /vulnerabilities/1
-  # PATCH/PUT /vulnerabilities/1.json
+  # PUT admins/1/vulnerabilities/1
   def update
-    respond_to do |format|
-      if @vulnerability.update(vulnerability_params)
-        format.html { redirect_to @vulnerability, notice: 'Vulnerability was successfully updated.' }
-        format.json { render :show, status: :ok, location: @vulnerability }
-      else
-        format.html { render :edit }
-        format.json { render json: @vulnerability.errors, status: :unprocessable_entity }
-      end
+    if @vulnerability.update_attributes(vulnerability_params)
+      redirect_to([@vulnerability.admin, @vulnerability], notice: 'Vulnerability was successfully updated.')
+    else
+      render action: 'edit'
     end
   end
 
-  # DELETE /vulnerabilities/1
-  # DELETE /vulnerabilities/1.json
+  # DELETE admins/1/vulnerabilities/1
   def destroy
     @vulnerability.destroy
-    respond_to do |format|
-      format.html { redirect_to vulnerabilities_url, notice: 'Vulnerability was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to admin_vulnerabilities_url(@admin)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_vulnerability
-      @vulnerability = Vulnerability.find(params[:id])
+    def set_vulnerabilities
+      @admin = Admin.find(params[:admin_id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_vulnerability
+      @vulnerability = @admin.vulnerabilities.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
     def vulnerability_params
-      params.require(:vulnerability).permit(:id, :description, :type)
+      params.require(:vulnerability).permit(:id, :description)
     end
 end

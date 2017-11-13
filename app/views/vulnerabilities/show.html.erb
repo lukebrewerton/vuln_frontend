@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id:</strong>
+  <b>Id:</b>
   <%= @vulnerability.id %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <b>Description:</b>
   <%= @vulnerability.description %>
 </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @vulnerability.source %>
-</p>
 
-<%= link_to 'Edit', edit_vulnerability_path(@vulnerability) %> |
-<%= link_to 'Back', vulnerabilities_path %>
+<%= link_to 'Edit', edit_admin_vulnerability_path(@vulnerability.admin, @vulnerability) %> |
+<%= link_to 'Back', admin_vulnerabilities_path(@vulnerability.admin) %>

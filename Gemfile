@@ -24,6 +24,7 @@ gem 'friendly_id'
 gem 'mongoid', '~> 6.2.0'
 gem 'mongo', '~> 2.4', '>= 2.4.3'
 gem 'bson', '~> 4.2', '>= 4.2.2'
+gem 'nested_scaffold'
 
 # Only Development env gems
 group :development do

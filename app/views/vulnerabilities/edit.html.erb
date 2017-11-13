@@ -1,6 +1,6 @@
-<h1>Editing Vulnerability</h1>
+<h1>Editing vulnerability</h1>
 
-<%= render 'form', vulnerability: @vulnerability %>
+<%= render 'form' %>
 
-<%= link_to 'Show', @vulnerability %> |
-<%= link_to 'Back', vulnerabilities_path %>
+<%= link_to 'Show', [@vulnerability.admin, @vulnerability] %> |
+<%= link_to 'Back', admin_vulnerabilities_path(@vulnerability.admin) %>

@@ -1,32 +1,25 @@
-<%= form_with(model: vulnerability, local: true) do |form| %>
-  <% if vulnerability.errors.any? %>
+<%= form_for([@vulnerability.admin, @vulnerability]) do |f| %>
+  <% if @vulnerability.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(vulnerability.errors.count, "error") %> prohibited this vulnerability from being saved:</h2>
+      <h2><%= pluralize(@vulnerability.errors.count, "error") %> prohibited this vulnerability from being saved:</h2>
 
       <ul>
-      <% vulnerability.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @vulnerability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id, id: :vulnerability_id %>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
   </div>
-
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :vulnerability_description %>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
   </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type, id: :vulnerability_type %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
