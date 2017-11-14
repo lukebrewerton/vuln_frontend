@@ -1,2 +1,31 @@
 <h1>Vulnerabilities#index</h1>
-<p>Find me in app/views/vulnerabilities/index.html.erb</p>
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Type</th>
+    <th>Published</th>
+    <th>Modified</th>
+    <th>URL</th>
+    <th>CVSS</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @vulnerabilities.size == 0 %>
+      <tr>
+        <td colspan="6">No vulnerabilities found.</td>
+      </tr>
+  <% else %>
+      <% @vulnerabilities.each do |vulnerability| %>
+          <tr>
+            <td><%= vulnerability.id %></td>
+            <td><%= vulnerability.description %></td>
+            <td><%= vulnerability.published %></td>
+            <td><%= vulnerability.modified %></td>
+            <td><%= vulnerability.href %></td>
+            <td><%= vulnerability.cvss %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
