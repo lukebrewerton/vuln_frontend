@@ -12,7 +12,6 @@ class Admin::ActiveVulnerabilitiesController < ApplicationController
   end
 
   def update
-    @back_url = session[:my_previous_url]
     if @activevulnerabilities.update(activevulnerability_params)
       flash[:notice] = t('admin.active_vuln.update.success')
       respond_with :edit, :admin, @activevulnerabilities

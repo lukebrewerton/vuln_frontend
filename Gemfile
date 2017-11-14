@@ -24,8 +24,6 @@ gem 'friendly_id'
 gem 'mongoid', '~> 6.2.0'
 gem 'mongo', '~> 2.4', '>= 2.4.3'
 gem 'bson', '~> 4.2', '>= 4.2.2'
-gem 'nested_scaffold'
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Only Development env gems
 group :development do
