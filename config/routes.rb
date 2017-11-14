@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :active_vulnerabilities
+    resources :vulnerabilities
     # Admin root
     root to: 'application#index'
   end
