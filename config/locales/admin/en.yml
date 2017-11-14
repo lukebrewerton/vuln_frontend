@@ -13,3 +13,7 @@ en:
         success: User was successfully updated.
       destroy:
         success: User was successfully destroyed.
+    active_vuln:
+      title: Active Vulnerabilities Admin
+      update:
+        success: Vulnerability Type was successfully updated.
