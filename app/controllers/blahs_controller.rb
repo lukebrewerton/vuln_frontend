@@ -1,2 +1,0 @@
-class BlahsController < ApplicationController
-end

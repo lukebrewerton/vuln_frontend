@@ -20,6 +20,7 @@
                   <th>Published</th>
                   <th>Modified</th>
                   <th>URL</th>
+                  <th>Score</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,6 +37,7 @@
                       <td><%= vulnerability.published %></td>
                       <td><%= vulnerability.modified %></td>
                       <td><%= link_to vulnerability.href, vulnerability.href , target: :_blank %></td>
+                      <td><%= vulnerability.cvss.score %></td>
                     </tr>
                 <% end %>
                 <% end %>
@@ -44,10 +46,11 @@
                 <tr role="row">
                   <th class="col-xs-1">ID</th>
                   <th>Type</th>
+                  <th>Description</th>
                   <th>Published</th>
                   <th>Modified</th>
                   <th>URL</th>
-                  <th>CVSS</th>
+                  <th>Score</th>
                 </tr>
                 </tfoot>
               </table>
