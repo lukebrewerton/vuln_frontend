@@ -11,6 +11,7 @@
         <p><b>Published: </b><%= @vulnerabilities.published %></p>
         <p><b>Modified: </b><%= @vulnerabilities.modified %></p>
         <p><b>CVSS Score: </b><%= @vulnerabilities.cvss.score %></p>
+        <p><b>URL: </b><%= link_to vulnerability.href, vulnerability.href , target: :_blank %></p>
         <p><b>Description: </b><%= @vulnerabilities.description %></p>
       </div>
 
